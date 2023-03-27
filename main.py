@@ -22,20 +22,8 @@ def find_between( s, first, last=None):
 #get wirless client list
 def GetData():
     #get data from router
-    headers = {
-        'Host': '192.168.1.254',
-        # 'Content-Length': '10',
-        'Authorization': 'Digest username="guest", realm="WF2409Ev4", nonce="U3VuIE1hciAxMiAwMDo0MDowNCAyMDIz", uri="/cgi-bin/skk_get.cgi", response="1f1b6b47c61b216d723f92791b196108"',
-        'Accept': '*/*',
-        'X-Requested-With': 'XMLHttpRequest',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36',
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'Origin': 'http://192.168.1.254',
-        'Referer': 'http://192.168.1.254/index.htm',
-        # 'Accept-Encoding': 'gzip, deflate',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Connection': 'close',
-    }
+    #you get the header
+    headers = {}
     data = 'wl_link=0&'
     response = requests.post('http://192.168.1.254/cgi-bin/skk_get.cgi', headers=headers, data=data)
     #find wirless client list
